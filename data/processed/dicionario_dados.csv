@@ -1,0 +1,33 @@
+coluna,rotulo,unidade,explicacao_simples,observacao_tecnica
+test_id,Código do teste,,Nome único do experimento (ex.: 21196 A2).,Padronizado: 'número espaço letra+número'.
+flame_type,Tipo de chama,,"'normal': o combustível sai do queimador e o oxigênio está ao redor. 'inverse' (invertida): o contrário, o oxigênio sai do queimador e o combustível está ao redor.",Definido pela tabela de origem.
+day,Dia de operação,,Em qual dia da campanha o teste foi feito.,
+fuel,Combustível,,"Gás que queimou: etano, propano ou butano.",
+fuel_mix_pct,Pureza do combustível,%,100 = gás puro. 30 = mistura com 30% de combustível (o resto é gás que não queima).,Extraído de nomes como '30% butane' na tabela de chamas normais.
+o2_fraction,Oxigênio (início),fração 0-1,"Quanto do gás é oxigênio. 0,21 = o ar da Terra; 0,85 = quase só oxigênio.",Em chama inversa é o O2 do gás que sai do queimador; em chama normal é o O2 da câmara. Não comparar os dois tipos só por este número.
+o2_fraction_after,Oxigênio (fim),fração 0-1,"Mesmo que acima, medido no fim do teste.",Em chama inversa é igual ao inicial (não medido separadamente).
+o2_location,Onde está o O2,,'burner_flow' = sai do queimador; 'chamber' = enche a câmara.,Deduzido do tipo de chama (ver descrição do experimento).
+fuel_fraction,Combustível (início),fração 0-1,Quanto do gás é combustível.,Xf nas tabelas originais.
+fuel_fraction_after,Combustível (fim),fração 0-1,"Mesmo que acima, no fim do teste.",
+fuel_location,Onde está o combustível,,'chamber' = enche a câmara; 'burner_flow' = sai do queimador.,Deduzido do tipo de chama.
+pressure_bar,Pressão,bar,Pressão do gás na câmara. 1 bar é quase a pressão do ar ao nível do mar.,Valor aproximado ('approx p').
+pressure_psi,Pressão,psi,"Mesma pressão em psi, unidade usada nas metas da NASA para habitats.","bar x 14,5038."
+hc_flow_mg_s,Vazão de combustível,mg/s,Quantos miligramas de combustível entram por segundo.,'HC burnrate' (inversa) ou 'mHC' (normal).
+o2_flow_mg_s,Vazão de oxigênio,mg/s,Quantos miligramas de oxigênio saem do queimador por segundo.,Só existe nas chamas inversas.
+tad_k,Temperatura adiabática da chama,K,"Temperatura máxima teórica da chama (calculada, não medida). 300 K ≈ 27 °C; 2000 K ≈ 1.700 °C.",Calculada com o ACME Chamber Calculator.
+zst,Zst (mistura ideal),0-1,Número que indica em que ponto a mistura combustível+oxigênio é 'perfeita' para queimar. Menor = chama mais perto do queimador.,Fração de mistura estequiométrica.
+tfp,TFP,sim/não,Sigla marcada sim/não nas tabelas originais. SIGNIFICADO A CONFIRMAR na documentação do PSI-159: não está definido nos arquivos recebidos.,Mantida como veio.
+ignition_type,Tipo de ignição,,'hot' = chama quente normal; 'cool' = só chama fria; 'flash' = clarão rápido que some; 'none' = não acendeu.,Limpeza de 'Hot ignition' + comentários.
+ignited,Acendeu?,sim/não,Verdadeiro se houve qualquer chama (inclusive clarão ou chama fria).,Derivada.
+outcome,Como terminou,,no_ignition = não acendeu; self_extinguished = a chama apagou sozinha; flow_terminated = o experimento cortou o gás; flash_only = só um clarão; cool_flame_only = só chama fria.,Resume 'Hot ignition' e 'Self-ext or flow term'.
+burn_time_s,Tempo de queima,s,Quantos segundos a chama durou.,0 quando não acendeu.
+cool_flame,Teve chama fria?,sim/não,"Chama fria é uma chama bem mais fraca e de baixa temperatura (quase invisível), típica da microgravidade.",Tabela de chamas normais.
+cool_flame_code,Código da chama fria,,Código (PCI-A a PCI-G) anotado pelos pesquisadores quando houve chama fria.,Sentido da sigla PCI a confirmar.
+peak_burner_temp_c,Pico de temperatura do queimador,°C,Temperatura mais alta que o queimador atingiu.,Vazio quando não acendeu.
+peak_burner_temp_k,Pico de temperatura do queimador,K,O mesmo em Kelvin.,"°C + 273,15 quando faltava."
+flame_color,Cor da chama,,"Cor observada (azul, amarela, amarela-azul).",Só chamas inversas. 'limit' do original virou a coluna hit_burner_temp_limit.
+hit_burner_temp_limit,Atingiu limite de temperatura,sim/não,O teste foi interrompido porque o queimador ficou quente demais.,Extraído da cor 'limit' e dos comentários.
+quality_notes,Alertas de qualidade,,"Avisos tirados dos comentários: teste_abortado, dados_perdidos, chama_nao_esferica, repeticao, sem_nitrogenio.",
+comments,Comentários originais,,"Texto original dos pesquisadores, em inglês.",
+investigation,Investigação,,De qual investigação do PSI o dado vem.,Permite somar outras (ex.: PSI-10) na mesma tabela.
+_arquivo,Arquivo de origem,,CSV de onde a linha veio.,Rastreabilidade.

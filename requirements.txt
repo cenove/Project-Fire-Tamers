@@ -1,0 +1,3 @@
+pandas>=2.0
+google-genai          # SDK do Gemini (só o chatbot precisa)
+streamlit             # só para o painel

@@ -1,0 +1,4 @@
+scenario_id,nome,o2_min,o2_max,p_min_bar,p_max_bar,o2_centro,p_centro_bar,descricao,fonte
+earth,Ar da Terra (nível do mar),0.18,0.24,0.9,1.2,0.21,1.013,"Ar que respiramos: ~21% de oxigênio a 14,7 psi (1 atm).",project_and_details.txt
+spacesuit,Traje espacial,0.9,1.0,0.2,0.4,1.0,0.296,"100% de oxigênio a apenas 4,3 psi, para o traje ficar flexível.",project_and_details.txt
+moon_base,Base lunar / rover pressurizado (previsto),0.3,1.0,0.2,0.703,0.3,0.703,"Previsão: 30% de O2 ou mais, com até 10,2 psi. Mais O2 = materiais pegam fogo mais fácil.","project_and_details.txt (valores previstos, não definitivos)"
